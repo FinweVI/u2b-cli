@@ -71,6 +71,7 @@ class U2B:
                 json_output = self.get_link(file_id, password, waiting_token).json()
                 if 'waitingToken' in json_output['data']:
                     waiting = json_output['data']['waiting'] + 5
+                    waiting_token = json_output['data']['waitingToken']
                     print("We need to wait {}s".format(waiting))
                     time.sleep(waiting)
                     continue
